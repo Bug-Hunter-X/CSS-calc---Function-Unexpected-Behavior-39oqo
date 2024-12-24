@@ -1,0 +1,32 @@
+/* bug.css - Demonstrates the issue */
+div {
+  width: 50%;
+  background-color: lightblue;
+  margin: 10px;
+}
+
+.container {
+  width: 400px; /* Example container width */
+  background-color: lightgray;
+  padding: 10px;
+}
+
+.buggy-element {
+  width: calc(50% - 10px);
+  background-color: lightgreen;
+}
+
+/* bugSolution.css - Potential solution using media queries */
+@media (min-width: 400px) { /* Example media query for wider screens */
+  .buggy-element {
+    width: calc(50% - 10px);
+    background-color: lightgreen;
+  }
+}
+
+@media (max-width: 399px) { /* Example media query for smaller screens */
+  .buggy-element {
+    width: calc(50% - 5px); /* Adjust calculation for smaller screens */
+    background-color: lightgreen;
+  }
+}
